@@ -1,8 +1,8 @@
-from db.repository import *
+from db.repo import *
 import mysql.connector
 
 
-class MysqlRepository:
+class MysqlRepository(Repository):
 
     def __init__(self):
         config = {
@@ -19,13 +19,14 @@ class MysqlRepository:
         self.cursor.close()
         self.connection.close()
 
-    def query_db(self, query:str):
+    def query_db(self, query: str):
         self.cursor.execute(query)
         return list(self.cursor)
 
-    def add_term(self, hindi_word:str, english_word:str):
+    def add_term(self, hindi_word: str, english_word: str):
         self.cursor.execute(f"INSERT INTO hindi_lexicon (word_dev, word_eng) VALUES ('{hindi_word}', '{english_word}')")
         print("Entry created successfully")
+        self.connection.commit()
         return True
 
     def load_lexicon(self) -> list:
