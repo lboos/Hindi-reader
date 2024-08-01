@@ -15,8 +15,7 @@ class MysqlRepository(Repository):
         self.connection = mysql.connector.connect(**config)
         self.cursor = self.connection.cursor()
 
-    def close(self):
-        self.cursor.close()
+    def __del__(self):
         self.connection.close()
 
     def query_db(self, query: str):
