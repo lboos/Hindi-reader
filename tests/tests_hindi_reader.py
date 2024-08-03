@@ -1,6 +1,6 @@
-from app.hindi_reader import *
-from app.docs import *
 import pytest
+
+from app.hindi_reader import *
 
 
 def test_docs():
@@ -18,8 +18,11 @@ def test_show_docs():
     assert hindi_doc().show_docs('A') == 'test'
     assert hindi_doc().show_docs('B') == 'test'
     assert hindi_doc().show_docs('C') == 'test'
-    assert hindi_doc().show_docs('D') == 'error'
-    assert hindi_doc().show_docs('1') == 'error'
+    with pytest.raises(ValueError):
+        hindi_doc().show_docs('D')
+        hindi_doc().show_docs('1')
+    # assert hindi_doc().show_docs('D') == 'error'
+    # assert hindi_doc().show_docs('1') == 'error'
 
 def test_dict():
     assert hindi_dict().trans['दन'] == 'day'

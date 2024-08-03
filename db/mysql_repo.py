@@ -18,15 +18,38 @@ class MysqlRepository(Repository):
     def __del__(self):
         self.connection.close()
 
-    def query_db(self, query: str):
-        self.cursor.execute(query)
-        return list(self.cursor)
+    # def query_db(self, query: str):
+    #     self.cursor.execute(query)
+    #     return list(self.cursor)
 
-    def add_term(self, hindi_word: str, english_word: str):
-        self.cursor.execute(f"INSERT INTO hindi_lexicon (word_dev, word_eng) VALUES ('{hindi_word}', '{english_word}')")
-        print("Entry created successfully")
-        self.connection.commit()
-        return True
+    # def quick_query_db(self, query: str):
+    #     self.cursor.execute(f"SELECT * FROM hindi_lexicon WHERE dev = {query}")
+    #     return list(self.cursor)
+
+    def dev_query(self, query: str):
+        try:
+            self.cursor.execute("SELECT * FROM hindi_lexicon WHERE word_dev = %s", (query,))
+            return self.cursor.fetchall()
+        except:
+            print("An error occurred!")
+
+        # if self.val not in story_dict.keys():
+        #     print("\n Please enter a valid story option (A, B, or C):")
+        #     raise ValueError('Not a valid story option')
+
+    def eng_query(self, query: str):
+        try:
+            # Use a tuple to pass the parameter
+            self.cursor.execute("SELECT * FROM hindi_lexicon WHERE word_eng = %s", (query,))
+            return self.cursor.fetchall()
+        except:
+            print("An error occurred!")
+
+    # def add_term(self, hindi_word: str, english_word: str):
+    #     self.cursor.execute(f"INSERT INTO hindi_lexicon (dev, word_eng) VALUES ('{hindi_word}', '{english_word}')")
+    #     print("Entry created successfully")
+    #     self.connection.commit()
+    #     return True
 
     def load_lexicon(self) -> list:
         sql = 'SELECT * FROM hindi_lexicon'
@@ -39,3 +62,7 @@ class MysqlRepository(Repository):
                     } for (id, word_dev, pos, word_eng, definition) in self.cursor]
         return entries
 
+
+# repo = db.mysql_repo.MysqlRepository()
+#
+# print(quick_query_db("पहला"))

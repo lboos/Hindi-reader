@@ -1,5 +1,4 @@
-from docs import *
-
+from model.docs import *
 class hindi_doc:
 
     def __init__(self):
@@ -13,8 +12,8 @@ class hindi_doc:
         print("Choose a story to read by entering A, B, or C:\n")
         self.val = val
         if self.val not in story_dict.keys():
-            print("\n Please enter a valid story option (A, B, or C):")
-            return "error"
+            # print("\n Please enter a valid story option (A, B, or C):")
+            raise ValueError('Not a valid story option')
         else:
             print(story_dict[self.val], "\n")
         return "test"
