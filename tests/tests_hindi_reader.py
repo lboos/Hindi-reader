@@ -33,3 +33,4 @@ def test_show_trans():
     assert hindi_dict().show_trans('आम') == 'mango'
     assert hindi_dict().show_trans('पेड़') == 'tree'
     assert hindi_dict().show_trans('मुदित') == 'error'
+

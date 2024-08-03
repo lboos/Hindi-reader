@@ -22,3 +22,4 @@ class Word:
 
     def __str__(self):
         return self.dev
+

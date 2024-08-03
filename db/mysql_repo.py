@@ -18,6 +18,7 @@ class MysqlRepository(Repository):
     def __del__(self):
         self.connection.close()
 
+
     def dev_query(self, query: str):
         if query not in self.dev_gloss():
             raise ValueError('Not a valid Hindi word')
@@ -26,7 +27,6 @@ class MysqlRepository(Repository):
             return self.cursor.fetchall()
         except:
             print("An error occurred!")
-
 
 
     def dev_gloss(self):
@@ -40,6 +40,7 @@ class MysqlRepository(Repository):
         except:
             print("An error occurred!")
 
+
     def eng_query(self, query: str):
         if query not in self.eng_gloss():
             raise ValueError('Not a valid English word')
@@ -49,6 +50,7 @@ class MysqlRepository(Repository):
             return self.cursor.fetchall()
         except:
             print("An error occurred!")
+
 
     def eng_gloss(self):
         try:

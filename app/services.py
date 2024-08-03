@@ -23,6 +23,7 @@ class Services:
             print(self.story_dict[self.val], "\n")
         return "Enjoy the story!"
 
+
     # USE CASE 2 Hindi Translation - user can input a Devanagari word and get English translation(s).
     def show_dev_trans(self, word:str) -> str:
         print("Enter a Hindi word for translation:")
@@ -31,6 +32,7 @@ class Services:
             raise ValueError("Please enter a valid word:")
         else:
             return self.repo.dev_query(self.word)[0][3]
+
 
     # (NEW) USE CASE 3 English Translation - user can input an English word and get Hindi translation(s).
     def show_eng_trans(self, word:str) -> str:
