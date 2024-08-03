@@ -6,5 +6,8 @@ class Repository(metaclass=abc.ABCMeta):
     def load_lexicon(self) -> list:
         raise NotImplementedError
 
-    def add_term(self, word_1: str, word_2: str):
+    def dev_query(self, query: str):
+        raise NotImplementedError
+
+    def eng_query(self, query: str):
         raise NotImplementedError

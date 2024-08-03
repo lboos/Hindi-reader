@@ -15,9 +15,6 @@ def test_load_lexicon():
     lexicon = repo.load_lexicon()
     assert len(lexicon) >= 5
 
-# def test_add_term():
-#     assert repo.add_term('हम', 'we') == True
-#     assert repo.add_term('माँ', 'mother') == True
 def test_dev_query():
     assert repo.dev_query("पहला") == [(2, 'पहला', None, 'first', None)]
     assert repo.dev_query("tree") == []
@@ -25,3 +22,7 @@ def test_dev_query():
 def test_eng_query():
     assert repo.eng_query("पहला") == []
     assert repo.eng_query("tree") == [(8, 'पेड़', None, 'tree', None)]
+
+# def test_add_term():
+#     assert repo.add_term('हम', 'we') == True
+#     assert repo.add_term('माँ', 'mother') == True

@@ -2,8 +2,9 @@ import pytest
 from model.classes import *
 
 def test_HindiDoc():
-    doc = HindiDoc("T", "ये टेस्ट हे")
+    doc = HindiDoc("T", "टेस्ट", "ये टेस्ट हे")
     assert doc.id == "T"
+    assert doc.title == "टेस्ट"
     assert doc.text == "ये टेस्ट हे"
     print(doc)
 

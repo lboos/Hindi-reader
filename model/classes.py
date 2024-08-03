@@ -1,8 +1,9 @@
 from model.enums import *
 class HindiDoc:
 
-    def __init__(self, id: str, text: str):
+    def __init__(self, id: str, title: str, text: str):
         self.id = id
+        self.title = title
         self.text = text
         # pass
 
