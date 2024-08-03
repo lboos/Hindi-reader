@@ -18,26 +18,46 @@ class MysqlRepository(Repository):
     def __del__(self):
         self.connection.close()
 
-    # def query_db(self, query: str):
-    #     self.cursor.execute(query)
-    #     return list(self.cursor)
-
     def dev_query(self, query: str):
+        if query not in self.dev_gloss():
+            raise ValueError('Not a valid Hindi word')
         try:
             self.cursor.execute("SELECT * FROM hindi_lexicon WHERE word_dev = %s", (query,))
             return self.cursor.fetchall()
         except:
             print("An error occurred!")
 
-        # if self.val not in story_dict.keys():
-        #     print("\n Please enter a valid story option (A, B, or C):")
-        #     raise ValueError('Not a valid story option')
+
+
+    def dev_gloss(self):
+        try:
+            self.cursor.execute("SELECT word_dev FROM hindi_lexicon")
+            res = self.cursor.fetchall()
+            gloss_list = []
+            for el in res:
+                gloss_list.append(el[0])
+            return gloss_list
+        except:
+            print("An error occurred!")
 
     def eng_query(self, query: str):
+        if query not in self.eng_gloss():
+            raise ValueError('Not a valid English word')
         try:
             # Use a tuple to pass the parameter
             self.cursor.execute("SELECT * FROM hindi_lexicon WHERE word_eng = %s", (query,))
             return self.cursor.fetchall()
+        except:
+            print("An error occurred!")
+
+    def eng_gloss(self):
+        try:
+            self.cursor.execute("SELECT word_eng FROM hindi_lexicon")
+            res = self.cursor.fetchall()
+            gloss_list = []
+            for el in res:
+                gloss_list.append(el[0])
+            return gloss_list
         except:
             print("An error occurred!")
 
@@ -60,3 +80,7 @@ class MysqlRepository(Repository):
     #     self.connection.commit()
     #     return True
 
+
+    # def query_db(self, query: str):
+    #     self.cursor.execute(query)
+    #     return list(self.cursor)

@@ -6,15 +6,15 @@ def test_HindiDoc():
     assert doc.id == "T"
     assert doc.title == "टेस्ट"
     assert doc.text == "ये टेस्ट हे"
-    print(doc)
+    # print(doc)
 
 def test_Word():
     word = Word("बिल्ली", "NOUN", "cat",
-                definition = "शेर, चीते आदि की जाति का परंतु उनसे छोटा एक पशु जो प्रायः घरों में रहता है और पाला जाता है")
+                "शेर, चीते आदि की जाति का परंतु उनसे छोटा एक पशु जो प्रायः घरों में रहता है और पाला जाता है")
     for key in vars(word).keys():
         assert type(vars(word)[key]) == str
     assert word.dev == "बिल्ली"
     assert word.pos == "NOUN"
     assert word.eng == "cat"
     assert word.definition == "शेर, चीते आदि की जाति का परंतु उनसे छोटा एक पशु जो प्रायः घरों में रहता है और पाला जाता है"
-    print(word)
+    # print(word)

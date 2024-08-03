@@ -1,4 +1,5 @@
 from model.enums import *
+
 class HindiDoc:
 
     def __init__(self, id: str, title: str, text: str):

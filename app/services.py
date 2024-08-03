@@ -1,11 +1,6 @@
-from model.classes import *
-from db.mysql_repo import *
 import model.classes
 import model.docs
 import db.mysql_repo
-
-
-# story_dict = {'A' : first_day_of_school, 'B': my_friends, 'C':the_mango_tree}
 
 class Services:
 
@@ -28,16 +23,23 @@ class Services:
             print(self.story_dict[self.val], "\n")
         return "Enjoy the story!"
 
-    # USE CASE 2 Translation - user can input a Devanagari word from a document (possibly using copy/paste) and the output is English translation(s) of the word.
+    # USE CASE 2 Hindi Translation - user can input a Devanagari word and get English translation(s).
     def show_dev_trans(self, word:str) -> str:
         print("Enter a Hindi word for translation:")
         self.word = word
-        try:
-            return self.repo.dev_query(self.word)
-        except:
-            print("An error occurred!")
+        if self.word not in self.repo.dev_gloss():
+            raise ValueError("Please enter a valid word:")
+        else:
+            return self.repo.dev_query(self.word)[0][3]
 
-
+    # (NEW) USE CASE 3 English Translation - user can input an English word and get Hindi translation(s).
+    def show_eng_trans(self, word:str) -> str:
+        print("Enter an English word for translation:")
+        self.word = word
+        if self.word not in self.repo.eng_gloss():
+            raise ValueError("Please enter a valid word:")
+        else:
+            return self.repo.eng_query(self.word)[0][1]
 
 
 

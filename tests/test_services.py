@@ -22,6 +22,12 @@ def test_show_docs():
 
 
 def test_show_dev_trans():
-    assert services.show_dev_trans("पहला") == [(2, 'पहला', None, 'first', None)]
-    assert services.show_dev_trans("tree") == []
-    # with pytest.raises(ValueError):
+    assert services.show_dev_trans("पहला") == 'first'
+    with pytest.raises(ValueError):
+        services.show_dev_trans("tree")
+
+
+def test_show_eng_trans():
+    assert services.show_eng_trans("first") == 'पहला'
+    with pytest.raises(ValueError):
+        services.show_eng_trans("पहला")
