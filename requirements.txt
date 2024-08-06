@@ -1,3 +1,7 @@
 #beautifulsoup4
 pytest
 mysql-connector-python
+Flask==2.0.3
+httpie==1.0.2
+Werkzeug==2.2.2
+Flask-RESTful==0.3.7

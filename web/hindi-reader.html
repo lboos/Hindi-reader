@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hindi Reader</title>
+</head>
+<body>
+
+<h1 >Hindi Reader
+<p>  <span lang="hi">हिन्दी रीडर</span> </p></h1>
+
+<h2>Enter a word for translation</h2>
+
+<form id="form1">
+    <div class="input-group">
+        <label for="word">Word: </label>
+        <input id="word" name="word" type="text"/>
+    </div>
+    <button type="submit" value="translate">Submit</button>
+</form>
+
+<h2>Response: </h2>
+<pre id="response"></pre>
+
+<h2>Choose a story to read</h2>
+
+<form id="form2">
+    <div class="input-group">
+        <label for="document">Story letter: </label>
+        <input id="document" name="document" type="text"/>
+    </div>
+    <button type="submit" value="document">Submit</button>
+</form>
+
+<h2>Response: </h2>
+<pre id="doc"></pre>
+
+
+</body>
+
+<script>
+async function handleSubmit1(event) {
+    event.preventDefault();
+
+    const data = new FormData(event.target);
+    const value = Object.fromEntries(data.entries());
+    value.word = data.get("word");
+    console.log({value});
+
+    const response = await fetch('http://localhost:5000/parse', {
+        method: 'POST',
+        body: JSON.stringify(value),
+        headers: {
+            'Content-Type': 'application/json',
+            }
+        });
+    const myJson = await response.json();
+    console.log(myJson);
+    document.getElementById('response').textContent = JSON.stringify(myJson, undefined, 2);
+}
+const form1 = document.getElementById("form1");
+form1.addEventListener("submit", async (e) => handleSubmit1(e), false);
+
+async function handleSubmit2(event) {
+    event.preventDefault();
+
+    const data = new FormData(event.target);
+    const value = Object.fromEntries(data.entries());
+    value.document = data.get("document");
+    console.log({value});
+
+    const response = await fetch('http://localhost:5000/segment', {
+        method: 'POST',
+        body: JSON.stringify(value),
+        headers: {
+            'Content-Type': 'application/json',
+            }
+        });
+    const myJson = await response.json();
+    console.log(myJson);
+    document.getElementById('segments').textContent = JSON.stringify(myJson, undefined, 2);
+}
+const form2 = document.getElementById("form2");
+form2.addEventListener("submit", async (e) => handleSubmit2(e), false);
+</script>
+
+</html>
