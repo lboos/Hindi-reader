@@ -18,6 +18,23 @@ class MysqlRepository(Repository):
     def __del__(self):
         self.connection.close()
 
+    def story_query(self, query: str):
+        if query not in self.dev_gloss():
+            raise ValueError('Not a valid Hindi word')
+        try:
+            self.cursor.execute("SELECT * FROM hindi_story WHERE id = %s", (query,))
+            res = self.cursor.fetchall()
+            # check if res is empty
+            # if empty, return an empty dictionary
+            # return {}
+            # else save the result as a new dictionary and return that
+            if res:
+                return dict(res)
+            else:
+                return {}
+        except:
+            print("An error occurred!")
+
 
     def dev_query(self, query: str):
         if query not in self.dev_gloss():

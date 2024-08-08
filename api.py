@@ -51,11 +51,8 @@ def translate_word():
 def display_story():
 
     data = request.get_json()
-    # app.logger.info(f"/parse - Got request: {data}")
-    doc = services.show_doc(data.get('document'))
-    # app.logger.info(f"/parse - Output: {doc}")
-    return doc
-    #return jsonify(doc)
+    story_json = services.show_doc(data.get('document'))
+    return story_json
 
 
 @app.route("/segment", methods=["POST"])

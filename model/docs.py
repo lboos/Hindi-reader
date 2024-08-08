@@ -44,18 +44,6 @@ illustrated by Mayur Mistry, published by Pratham Books\n\
 Read, create and translate stories for free on www.storyweaver.org.in")
 
 
-first_day_of_school = { 'id':"A", 'title':"First Day of School", 'text':
-"स्कूल पहला दन\n\
-Author: Cheryl Rao\n\
-Illustrator: Mayur Mistry\n\
-Translator: Arti Smit\n\
-(Hindi),\n\
-translated by Arti Smit, based on original story\n\
-Rani\'s First Day at School (English), written by Cheryl Rao,\n\
-illustrated by Mayur Mistry, published by Pratham Books\n\
-(© Pratham Books, 2015) under a CC BY 4.0 license on StoryWeaver.\n\
-Read, create and translate stories for free on www.storyweaver.org.in"}
-
 
 my_friends = HindiDoc('B', "My Friends",
   "मेरे दोस्त\n\

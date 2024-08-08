@@ -34,8 +34,10 @@
 </form>
 
 <h2>Response: </h2>
-<pre id="doc"></pre>
-
+<!--<pre id="doc"></pre>-->
+<b id="titleElement"></b>
+<br>
+<div id="textElement"></div>
 
 </body>
 
@@ -77,11 +79,13 @@ async function handleSubmit2(event) {
             'Content-Type': 'application/json',
             }
         });
-    //const myJson = await response.json();
-    const myJson = await response;
-    console.log(myJson);
-    //document.getElementById('doc').textContent = JSON.stringify(myJson, undefined, 2);
-    document.getElementById('doc').textContent = myJson;
+    const myJson = await response.json();
+    // console.log(myJson);
+    const titleVal = myJson.title;
+    const textVal = myJson.text;
+    document.getElementById('titleElement').textContent = titleVal;
+    document.getElementById('textElement').textContent = JSON.stringify(textVal);
+    // document.getElementById('doc').textContent = myJson;
 }
 const form2 = document.getElementById("form2");
 form2.addEventListener("submit", async (e) => handleSubmit2(e), false);

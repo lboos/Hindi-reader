@@ -17,3 +17,6 @@ class Repository(metaclass=abc.ABCMeta):
 
     def eng_gloss(self):
         raise NotImplementedError
+
+    def story_query(self, query: str):
+        raise NotImplementedError

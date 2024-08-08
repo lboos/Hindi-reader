@@ -11,6 +11,13 @@ class HindiDoc:
     def __str__(self):
         return self.text
 
+    @property
+    def data(self):
+        return {
+            "id": self.id,
+            "title": self.title,
+            "text": self.text
+        }
 
 class Word:
 
