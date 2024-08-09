@@ -16,21 +16,15 @@ class MysqlRepository:
         self.connection = mysql.connector.connect(**config)
         self.cursor = self.connection.cursor()
 
-    #This caused an error message again, so I commented it out.
-    # def __del__(self):
-    #     self.connection.close()
+
+    def __del__(self):
+        self.connection.close()
 
 
     def story_query(self, query: str):
-        if query not in self.dev_gloss():
-            raise ValueError('Not a valid Hindi word')
         try:
             self.cursor.execute("SELECT * FROM hindi_story WHERE id = %s", (query,))
             res = self.cursor.fetchall()
-            # check if res is empty
-            # if empty, return an empty dictionary
-            # return {}
-            # else save the result as a new dictionary and return that
             if res:
                 story_tuple = res[0]
                 return story_tuple
