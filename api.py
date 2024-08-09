@@ -33,7 +33,7 @@ services = Services()
 def doc() -> str:
     # app.logger.info("doc - Got request")
     # return "Hello there"
-    with open("app/doc.html", "r") as f:
+    with open("app/doc.html", "r", encoding="utf-8") as f:
         return f.read()
 
 
@@ -51,7 +51,7 @@ def translate_word():
 def display_story():
 
     data = request.get_json()
-    story_json = services.show_doc(data.get('document'))
+    story_json = services.show_doc_db(data.get('document'))
     return story_json
 
 

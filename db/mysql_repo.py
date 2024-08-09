@@ -1,22 +1,25 @@
-from db.repo import *
+# from db.repo import *
+from model.docs import HindiDoc
 import mysql.connector
 
 
-class MysqlRepository(Repository):
+class MysqlRepository:
 
     def __init__(self):
         config = {
             'user': 'root',
             'password': 'root',
-            'host': 'db',  # When you run this on your machine change it to 'localhost'
-            'port': '3306',  # When you run this on your machine change it to '32000'
+            'host': 'localhost',  # When you run this on your machine change it to 'localhost' (vs 'db')
+            'port': '32000',  # When you run this on your machine change it to '32000' (vs '3306')
             'database': 'hindi'
         }
         self.connection = mysql.connector.connect(**config)
         self.cursor = self.connection.cursor()
 
-    def __del__(self):
-        self.connection.close()
+    #This caused an error message again, so I commented it out.
+    # def __del__(self):
+    #     self.connection.close()
+
 
     def story_query(self, query: str):
         if query not in self.dev_gloss():
@@ -29,9 +32,10 @@ class MysqlRepository(Repository):
             # return {}
             # else save the result as a new dictionary and return that
             if res:
-                return dict(res)
+                story_tuple = res[0]
+                return story_tuple
             else:
-                return {}
+                return ()
         except:
             print("An error occurred!")
 

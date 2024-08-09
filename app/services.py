@@ -1,9 +1,10 @@
 import model.classes
-# import model.docs
+import model.docs
+from db.mysql_repo import MysqlRepository
 from model.docs import HindiDoc
-import db.mysql_repo
+# import db.mysql_repo
 
-repo = db.mysql_repo.MysqlRepository()
+# repo = db.mysql_repo.MysqlRepository()
 
 class Services:
 
@@ -11,14 +12,28 @@ class Services:
         # self.repo = db.mysql_repo.MysqlRepository()
         self.docs = model.docs
         self.story_dict = model.docs.story_dict
+        self.repo = MysqlRepository()
 
 
     # USE CASE 1 Hindi texts - user can choose a document in Devanagari to read.
-    def show_doc(self, val: str) -> str:
+    def show_doc(self, val):
         hindi_doc = HindiDoc('', 'Not a valid story option', 'Please enter A, B, or C.')
         if val in self.story_dict.keys():
             hindi_doc = self.story_dict[val]
         # return HindiDoc object as json data
+        return hindi_doc.data
+
+    # USE CASE 1 Hindi Translation - user can input a Devanagari word and get English translation(s).
+    def show_doc_db(self, val):
+        # print("Enter a Hindi word for translation:")
+        # self.val = val
+        # call story_query() and get back a dictionary:
+        story_tuple = self.repo.story_query(val)
+        # if story_dict length is zero, do:
+        if len(story_tuple) == 0:
+            hindi_doc = HindiDoc('', 'Not a valid story option', 'Please enter A, B, or C.')
+        else:
+            hindi_doc = HindiDoc(story_tuple[0], story_tuple[1], story_tuple[2])
         return hindi_doc.data
 
 
@@ -35,18 +50,6 @@ class Services:
     #         print(self.story_dict[self.val], "\n")
     #     return "Enjoy the story!"
 
-    # USE CASE 1 Hindi Translation - user can input a Devanagari word and get English translation(s).
-    def show_doc_db(self, val:str) -> str:
-        # print("Enter a Hindi word for translation:")
-        self.val = val
-        # call story_query() and get back a dictionary:
-        story_dict = repo.story_query(val)
-        # if story_dict length is zero, do:
-        if len(story_dict) == 0:
-            hindi_doc = HindiDoc('', 'Not a valid story option', 'Please enter A, B, or C.')
-        else:
-            hindi_doc = story_dict
-        return hindi_doc.data
 
 
     # USE CASE 2 Hindi Translation - user can input a Devanagari word and get English translation(s).
