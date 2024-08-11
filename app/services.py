@@ -6,9 +6,6 @@ from model.docs import Word
 from model.enums import PartOfSpeech
 
 
-# import db.mysql_repo
-
-# repo = db.mysql_repo.MysqlRepository()
 
 class Services:
 
@@ -20,12 +17,12 @@ class Services:
 
     # Old non-db code
     # USE CASE 1 Hindi texts - user can choose a document in Devanagari to read.
-    def show_doc(self, val):
-        hindi_doc = HindiDoc('', 'Not a valid story option', 'Please enter A, B, or C.')
-        if val in self.story_dict.keys():
-            hindi_doc = self.story_dict[val]
-        # return HindiDoc object as json data
-        return hindi_doc.data
+    # def show_doc(self, val):
+    #     hindi_doc = HindiDoc('', 'Not a valid story option', 'Please enter A, B, or C.')
+    #     if val in self.story_dict.keys():
+    #         hindi_doc = self.story_dict[val]
+    #     # return HindiDoc object as json data
+    #     return hindi_doc.data
 
     # USE CASE 1 Hindi Translation - user can input a Devanagari word and get English translation(s).
     def show_doc_db(self, val):
