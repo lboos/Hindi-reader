@@ -25,7 +25,7 @@ There are three stories to choose from, labeled A, B, and C. Enter one of these 
 ]
 ```
 
-The stories can also be viewed using a POST request. The endpoint is http://localhost:5000/display and the story id mustbe included as {"document":<letter>}.
+The stories can also be viewed using a POST request. The endpoint is http://localhost:5000/display and the story id mustbe included as {"document":\<letter\>}.
 
 
 For example:
