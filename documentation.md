@@ -27,10 +27,14 @@ There are three stories to choose from, labeled A, B, and C. Enter one of these 
 Choosing story 'B' returns
 ```
 **My Friends**
-"मेरे दोस्त\n\nAuthor: Rukmini Banerji\n\nIllustrator: Rajeev Verma 'Banjara'\n\n\n\nमेरे बहुत सारे दोस्त हैं।\n\nमेरे कु छ दोस्त बड़े-बड़े हैं। और...\n\nकुछ दोस्त छोटे हैं।\n\nमेरे कई दोस्त बूढ़े भी हैं।\n\nऔर... कुछ नन्हे-मुन्ने भी हैं।\n\nमेरे कु छ दोस्त ऐसे भी हैं जिनकी...पूँछ भी है।\n\nऔर कुछ ऐसे जिनके... पैर ही नहीं हैं।\n\nमेरे कुछ दोस्त उड़ते हैं। और कुछ दोस्त तैरते भी हैं।\n\nओह! हो! किताबों भी तो मेरी दोस्त हैं।\n\nलेकिन, मेरा सबसे अच्छा दोस्त कौन है?\n\nकौन? कौन? कौन?\n\n\n\nमेरी माँ!\n\n\n\nAttribution Text: मेरे दोस्त (Hindi), written by Rukmini Banerji,\n\n illustrated by Rajeev Verma 'Banjara', published by Pratham Books (© Pratham Books, 2006) \n\n under a CC BY 4.0 license on StoryWeaver. Read, create and translate stories for free on www.storyweaver.org.in"
+"मेरे दोस्त\n\nAuthor: Rukmini Banerji\n\nIllustrator: Rajeev Verma 'Banjara'\n\n\n\nमेरे बहुत सारे दोस्त हैं।\n\nमेरे कु छ दोस्त बड़े-बड़े हैं। और...\n\nकुछ दोस्त
+छोटे हैं।\n\nमेरे कई दोस्त बूढ़े भी हैं।\n\nऔर... कुछ नन्हे-मुन्ने भी हैं।\n\nमेरे कु छ दोस्त ऐसे भी हैं जिनकी...पूँछ भी है।\n\nऔर कुछ ऐसे जिनके... पैर ही नहीं हैं।\n\nमेरे कुछ दोस्त उड़ते हैं।
+और कुछ दोस्त तैरते भी हैं।\n\nओह! हो! किताबों भी तो मेरी दोस्त हैं।\n\nलेकिन, मेरा सबसे अच्छा दोस्त कौन है?\n\nकौन? कौन? कौन?\n\n\n\nमेरी माँ!\n\n\n\nAttribution
+Text: मेरे दोस्त (Hindi), written by Rukmini Banerji,\n\n illustrated by Rajeev Verma 'Banjara', published by Pratham Books (© Pratham Books,
+2006) \n\n under a CC BY 4.0 license on StoryWeaver. Read, create and translate stories for free on www.storyweaver.org.in"
 ```
 
-The stories can also be viewed using a POST request. The endpoint is http://localhost:5000/display and the story id mustbe included as {"document":\<letter\>}. For example:
+The stories can also be viewed using a POST request. The endpoint is http://localhost:5000/display and the story id must be included as {"document":\<letter\>}. For example:
 
 ```
 curl -X POST "http://localhost:5000/display" -H "Content-Type: application/json" -d '{"document":"B"}'
