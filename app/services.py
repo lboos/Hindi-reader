@@ -2,6 +2,10 @@ import model.classes
 import model.docs
 from db.mysql_repo import MysqlRepository
 from model.docs import HindiDoc
+from model.docs import Word
+from model.enums import PartOfSpeech
+
+
 # import db.mysql_repo
 
 # repo = db.mysql_repo.MysqlRepository()
@@ -14,7 +18,7 @@ class Services:
         self.story_dict = model.docs.story_dict
         self.repo = MysqlRepository()
 
-
+    # Old non-db code
     # USE CASE 1 Hindi texts - user can choose a document in Devanagari to read.
     def show_doc(self, val):
         hindi_doc = HindiDoc('', 'Not a valid story option', 'Please enter A, B, or C.')
@@ -25,18 +29,14 @@ class Services:
 
     # USE CASE 1 Hindi Translation - user can input a Devanagari word and get English translation(s).
     def show_doc_db(self, val):
-        # print("Enter a Hindi word for translation:")
-        # self.val = val
-        # call story_query() and get back a dictionary:
         story_tuple = self.repo.story_query(val)
-        # if story_dict length is zero, do:
         if len(story_tuple) == 0:
             hindi_doc = HindiDoc('', 'Not a valid story option', 'Please enter A, B, or C.')
         else:
             hindi_doc = HindiDoc(story_tuple[0], story_tuple[1], story_tuple[2])
         return hindi_doc.data
 
-
+    # Old non-api code
     # # USE CASE 1 Hindi texts - user can choose a document in Devanagari to read.
     # def show_doc(self, val: str) -> str:
     #     print("Hindi Stories:")
@@ -51,15 +51,15 @@ class Services:
     #     return "Enjoy the story!"
 
 
-
+    # Still trying to get this to work
     # USE CASE 2 Hindi Translation - user can input a Devanagari word and get English translation(s).
-    def show_dev_trans(self, word:str) -> str:
-        print("Enter a Hindi word for translation:")
-        self.word = word
-        if self.word not in self.repo.dev_gloss():
-            raise ValueError("Please enter a valid word:")
+    def show_dev_trans(self, word):
+        word_tuple = self.repo.dev_query(word)
+        if len(word_tuple) == 0:
+            word_res = Word('', PartOfSpeech.NOUN, 'Not a valid word option', '')
         else:
-            return self.repo.dev_query(self.word)[0][3]
+            word_res = Word(word_tuple[0], word_tuple[1], word_tuple[2], word_tuple[3])
+        return word_res
 
 
     # (NEW) USE CASE 3 English Translation - user can input an English word and get Hindi translation(s).

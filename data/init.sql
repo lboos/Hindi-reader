@@ -99,7 +99,7 @@ Illustrator: Rajeev Verma ''Banjara''\n\
 Attribution Text: मेरे दोस्त (Hindi), written by Rukmini Banerji,\n\
  illustrated by Rajeev Verma ''Banjara'', published by Pratham Books (© Pratham Books, 2006) \n\
  under a CC BY 4.0 license on StoryWeaver. Read, create and translate stories for free on www.storyweaver.org.in'),
-    ('C', 'The Mando Tree', 'आम का पेड़\n\
+    ('C', 'The Mango Tree', 'आम का पेड़\n\
 Author: Kanchan Bannerjee\n\
 Illustrator: Kavya Singh\n\
 Translator: Rajesh Khar\n\
