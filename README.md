@@ -5,7 +5,7 @@ A way to practice reading Hindi through stories on the web. Created for Universi
 
 ## Use cases
 
-**Hindi texts** - User can enter a letter (A, B, or C) to read a story in Hindi.
+**1. Hindi texts** - User can enter a letter (A, B, or C) to read a story in Hindi.
 
    *Input*: A, B, or C
 
@@ -23,7 +23,7 @@ Pratham Books (© Pratham Books, 2013) \n\nunder a CC BY 4.0 license on StoryWea
 on www.storyweaver.org.in"
 ```
 
-**Hindi to English word translation** - user can input a Devanagari word from the document (using copy/paste) and the output is an English translation of the word.
+**2. Hindi to English word translation** - user can input a Devanagari word from the document (using copy/paste) and the output is an English translation of the word.
 
 For example, "आम" is translated to "mango".
 
