@@ -9,9 +9,9 @@ A way to practice reading Hindi through stories on the web. Created for Universi
 
    *Input*: A, B, or C
 
-    *Output*: Story A, B, or C
+   *Output*: Story A, B, or C
 
-For example, the title and text of story C is
+For example, the title and text of story C is below.
 ```
 The Mango Tree
 "आम का पेड़\n\nAuthor: Kanchan Bannerjee\n\nIllustrator: Kavya Singh\n\nTranslator: Rajesh Khar\n\n \n\nहमें नानी के गाँव जाना अच्छा लगता है।\n\n
