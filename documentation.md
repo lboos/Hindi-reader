@@ -85,4 +85,4 @@ returns
 
 ## Acknowledgement
 
-Thanks to https://storyweaver.org.in/en/stories?language=Hindi for the stories in Hindi.
+Credit to https://storyweaver.org.in/en/stories?language=Hindi for the stories in Hindi.
