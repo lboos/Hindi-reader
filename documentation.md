@@ -66,3 +66,10 @@ BY 4.0 license on StoryWeaver. Read, create and translate stories for free on ww
 Friends"}
 ```
 (In the terminal the Hindi is not rendered correctly.)
+
+## Translating a word
+
+As a demo, the Hindi words ['स्कूल', 'पहला', 'दन', 'मेरे', 'दोस्त', 'आम', 'का', 'पेड़'] can be translated to English. Copy and paste to enter one of these words in the box and click "Submit" to view that word's English translation. For example:
+
+![school translation](School_translation.jpg)
+
