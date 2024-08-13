@@ -82,3 +82,7 @@ returns
 ```
 {"definition":null,"dev":"\u0938\u094d\u0915\u0942\u0932","eng":"school","pos":null}
 ```
+
+## Acknowledgement
+
+Thanks to https://storyweaver.org.in/en/stories?language=Hindi for the stories in Hindi.
