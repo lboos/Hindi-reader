@@ -1,6 +1,6 @@
 # Hindi Reader
 
-A way to practice reading Hindi through stories on the web. Created for University of Arizona HLT Master's program. 
+A way to practice reading Hindi through stories on the web. Created for University of Arizona HLT Master's program. The source of the stories is https://storyweaver.org.in/en/stories?language=Hindi.
 
 
 ## Use cases
