@@ -1,6 +1,6 @@
 # Hindi Reader
 
-A way to read Hindi stories on the web. Created for University of Arizona HLT Master's program. 
+A way to practice reading Hindi through stories on the web. Created for University of Arizona HLT Master's program. 
 
 
 ## Use cases
@@ -23,12 +23,18 @@ Pratham Books (© Pratham Books, 2013) \n\nunder a CC BY 4.0 license on StoryWea
 on www.storyweaver.org.in"
 ```
 
-## Future use cases
+**Hindi to English word translation** - user can input a Devanagari word from the document (using copy/paste) and the output is an English translation of the word.
 
-**One word translation** - user can input a Devanagari word from a document (possibly using copy/paste) and the output is English translation(s) of the word.
+For example, "आम" is translated to "mango".
 
-**Click to translate** - user can click on a word in the Devanagari document and the output is English translation(s) of the word.
 
+## Future possible use cases
+
+**Click to translate** - user can click on a Hindi word in the Devanagari document and the output is English translation(s) of the word.
+
+**English to Hindi word translation** - user can input an English word related to the text and the output is a Hindi translation of the word.
+
+**Flexible Hindi texts** - user can input a Devanagari document and a reader version (with one-word-at-a-time translation) is provided.
 
 ## License
 
