@@ -35,12 +35,12 @@ Text: मेरे दोस्त (Hindi), written by Rukmini Banerji,\n\n illu
 2006) \n\n under a CC BY 4.0 license on StoryWeaver. Read, create and translate stories for free on www.storyweaver.org.in"
 
 
-The stories can also be viewed using a POST request. The endpoint is http://localhost:5000/display and the story id must be included as {"document":\<letter\>}. For example:
+The stories can also be viewed directly with the API using a POST request. The endpoint is http://localhost:5000/display and the story id must be included as {"document":\<letter\>}. Here is an example of a curl request in the command line:
 
 ```
 curl -X POST "http://localhost:5000/display" -H "Content-Type: application/json" -d '{"document":"B"}'
 ```
-returns 
+This returns:
 
 ```
 {"id":"B","text":"\u092e\u0947\u0930\u0947 \u0926\u094b\u0938\u094d\u0924\n\nAuthor: Rukmini Banerji\n\nIllustrator:
@@ -73,7 +73,7 @@ As a demo, the Hindi words ['स्कूल', 'पहला', 'दन', 'मे
 
 ![school translation](School_translation.jpg)
 
-The words can also be translated using a POST request. The endpoint is http://localhost:5000/translate and the word must be included as {"word":\<Devanagari word\>}. For example:
+The data for a word can also be accessed directly with the API using a POST request. The endpoint is http://localhost:5000/translate and the word must be included as {"word":\<Devanagari word\>}. For example the following curl request in the command line:
 
 ```
 curl -X POST "http://localhost:5000/translate" -H "Content-Type: application/json" -d '{"word":"स्कूल"}'
