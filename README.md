@@ -30,7 +30,7 @@ For example, "आम" is translated to "mango".
 
 ## Future possible use cases
 
-**Click to translate** - user can click on a Hindi word in the Devanagari document and the output is English translation(s) of the word.
+**Click to translate** - user can click on a Hindi word in the Devanagari document and the output is an English translation of the word.
 
 **English to Hindi word translation** - user can input an English word related to the text and the output is a Hindi translation of the word.
 
