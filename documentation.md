@@ -1,6 +1,6 @@
 # Hindi Reader
 
-You can read a story in Hindi using the Hindi reader form interface at http://localhost:5000/.
+You can read a story in Hindi using the Hindi reader form interface at http://127.0.0.1:5000/.
 
 
 ## Viewing a Story
