@@ -2,8 +2,21 @@
 
 A way to practice reading Hindi through stories on the web. Created for University of Arizona HLT Master's program. The source of the stories is https://storyweaver.org.in/en/stories?language=Hindi.
 
+## Installation
 
-## Use cases
+Download the files to a directory on your computer. In the command line type
+
+```
+docker compose up
+```
+To start the web form, type 
+```
+FLASK_APP=api
+flask run
+```
+and direct your browser to http://127.0.0.1:5000/.
+
+## Usage
 
 **1. Hindi texts** - User can enter a letter (A, B, or C) to read a story in Hindi.
 
