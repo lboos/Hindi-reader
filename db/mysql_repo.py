@@ -36,7 +36,8 @@ class MysqlRepository:
 
     def dev_query(self, query: str):
         if query not in self.dev_gloss():
-            raise ValueError('Not a valid Hindi word')
+            # raise ValueError('Not a valid Hindi word')
+            return []
         try:
             self.cursor.execute("SELECT * FROM hindi_lexicon WHERE word_dev = %s", (query,))
             return self.cursor.fetchall()
