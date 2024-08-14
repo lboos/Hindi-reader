@@ -73,7 +73,7 @@ As a demo, the Hindi words ['स्कूल', 'पहला', 'दन', 'मे
 
 ![school translation](School_translation.jpg)
 
-The data for a word can also be accessed directly with the API using a POST request. The endpoint is http:/127.0.0.1:5000/translate and the word must be included as {"word":\<Devanagari word\>}. For example the following curl request in the command line:
+The data for a word can also be accessed directly with the API using a POST request. The endpoint is http://127.0.0.1:5000/translate and the word must be included as {"word":\<Devanagari word\>}. For example the following curl request in the command line:
 
 ```
 curl -X POST "http://127.0.0.1:5000/translate" -H "Content-Type: application/json" -d '{"word":"स्कूल"}'
